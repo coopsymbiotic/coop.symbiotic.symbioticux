@@ -9,6 +9,8 @@ require_once 'symbioticux.civix.php';
  */
 function symbioticux_civicrm_config(&$config) {
   _symbioticux_civix_civicrm_config($config);
+
+  CRM_Core_Resources::singleton()->addStyleFile('coop.symbiotic.symbioticux', 'css/symbioticux.css');
 }
 
 /**
