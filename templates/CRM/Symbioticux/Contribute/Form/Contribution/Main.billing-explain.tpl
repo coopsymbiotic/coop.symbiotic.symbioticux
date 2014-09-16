@@ -1,0 +1,1 @@
+<div class="symbioticux-billing-explain-cc alert alert-success" style="display: none;">{ts domain="coop.symbiotic.symbioticux"}Since this is a demo contribution page, we have pre-filled the credit card details with test data.{/ts}</div>

@@ -106,3 +106,60 @@ function symbioticux_civicrm_caseTypes(&$caseTypes) {
 function symbioticux_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
   _symbioticux_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
+
+/**
+ * Implements hook_civicrm_buildForm() is a completely overkill way.
+ * Searches for an override class named after the initial $formName
+ * and calls its buildForm().
+ *
+ * Ex: for a $formName "CRM_Case_Form_CaseView", it will:
+ * - try to find * CRM/Symbioticux/Case/Form/CaseView.php,
+ * - require_once the file, instanciate an object, and
+ * - call its buildForm() function.
+ *
+ * Why so overkill? My buildForm() implementations tend to become
+ * really big and numerous, and even if I split up into multiple
+ * functions, it still makes a really long php file.
+ */
+function symbioticux_civicrm_buildForm($formName, &$form) {
+  $formName = str_replace('CRM_', 'CRM_Symbioticux_', $formName);
+  $parts = explode('_', $formName);
+  $filename = dirname(__FILE__) . '/' . implode('/', $parts) . '.php';
+
+  if (file_exists($filename)) {
+    require_once $filename;
+    $foo = new $formName;
+
+    if (method_exists($foo, 'buildForm')) {
+      $foo->buildForm($form);
+    }
+  }
+}
+
+/**
+ * Implements hook_civicrm_pageRun() is a completely overkill way.
+ * Searches for an override class named after the initial $formName
+ * and calls its buildForm().
+ *
+ * Ex: for a $formName "CRM_Case_Form_CaseView", it will:
+ * - try to find * CRM/Symbioticux/Case/Page/CaseView.php,
+ * - require_once the file, instanciate an object, and
+ * - call its pageRun() function.
+ *
+ * See @symbioticux_civicrm_buildForm() for more background info.
+ */
+function symbioticux_civicrm_pageRun(&$page) {
+  $pageName = get_class($page);
+  $pageName = str_replace('CRM_', 'CRM_Symbioticux_', $pageName);
+  $parts = explode('_', $pageName);
+  $filename = dirname(__FILE__) . '/' . implode('/', $parts) . '.php';
+
+  if (file_exists($filename)) {
+    require_once $filename;
+    $foo = new $pageName;
+
+    if (method_exists($foo, 'pageRun')) {
+      $foo->pageRun($form);
+    }
+  }
+}
