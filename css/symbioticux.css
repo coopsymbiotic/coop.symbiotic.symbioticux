@@ -1,0 +1,82 @@
+/**
+ * Contribution form.
+ */
+
+/* Main amounts radios */
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row {
+  display: inline-block;
+}
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row .crm-price-amount-amount {
+  display: none;
+}
+
+/* hide 'other amount' option */
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row:last-child {
+  display: none;
+}
+
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row .price-set-option-content {
+  /* copied from bootstrap */
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  border-radius: 4px;
+  color: #555;
+  border: 1px solid #CCC;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row .price-set-option-content.highlight {
+  border: 1px solid #54B4EB;
+}
+
+/* "Other amount" : align the $ sign after the field */
+.crm-contribution-main-form-block #priceset .other_amount-content input.crm-form-text {
+  display: inline-block;
+}
+.crm-contribution-main-form-block #priceset .other_amount-content br {
+  display: none;
+}
+
+/* Mandatory marker on billing-block weirdly redundant because of addRules in buildForm */
+#payment_information .label label .crm-marker {
+  display: none;
+}
+
+#payment_information .crm-form-text {
+  display: inline-block;
+}
+
+/* Error messages on forms */
+label.crm-inline-error.alert-danger {
+  margin-bottom: 0;
+  margin-left: 1em;
+  padding: 10px;
+}
+
+/* popup confirmation extension */
+#crm-paymentconfirmpopup .label {
+  float: none;
+  width: auto;
+  text-align: left;
+}
+
+/* show only the amount label */
+#crm-paymentconfirmpopup .crm-price-amount-amount {
+  display: none;
+}
+
+body.page-civicrm-contribute-transact .ui-dialog-titlebar {
+  display: none;
+}
+
+body.page-civicrm-contribute-transact .ui-widget-content {
+  border: 0;
+}
+
+body.page-civicrm-contribute-transact .ui-dialog-buttonpane {
+  background: none;
+}
