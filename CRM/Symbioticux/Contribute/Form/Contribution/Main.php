@@ -8,6 +8,9 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
       CRM_Core_Region::instance('page-body')->add(array(
         'template' => 'CRM/Symbioticux/Contribute/Form/Contribution/Main.billing-explain.tpl',
       ));
+      CRM_Core_Region::instance('page-body')->add(array(
+        'template' => 'CRM/Symbioticux/Contribute/Form/Contribution/Main.validate.tpl',
+      ));
 
       $js = "cj('#credit_card_number').click(function(event) {
                if (! cj(this).val()) {
