@@ -77,7 +77,17 @@ cj(function($) {
     {/if}{literal}
   };
 
-  params.submitHandler = paymentconfirmpopup_show_popup;
+  if (typeof paymentconfirmpopup_show_popup !== 'undefined') {
+    params.submitHandler = paymentconfirmpopup_show_popup;
+  }
+  else {
+    // Remove the "submit once" handler
+    $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
+
+    params.submitHandler = function(form) {
+      submitOnce(document.getElementById('_qf_Main_upload-bottom'), form);
+    }
+  }
 
   CRM.validate.params = CRM.validate.params || {};
   $.extend(CRM.validate.params, params);
