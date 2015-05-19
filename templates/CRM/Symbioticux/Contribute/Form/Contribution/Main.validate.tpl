@@ -81,12 +81,8 @@ cj(function($) {
     params.submitHandler = paymentconfirmpopup_show_popup;
   }
   else {
-    // Remove the "submit once" handler
+    // Remove the "submit once" handler, otherwise jquery-validate will not run.
     $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
-
-    params.submitHandler = function(form) {
-      submitOnce(document.getElementById('_qf_Main_upload-bottom'), form);
-    }
   }
 
   CRM.validate.params = CRM.validate.params || {};
