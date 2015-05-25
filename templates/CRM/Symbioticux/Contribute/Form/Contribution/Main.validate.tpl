@@ -83,6 +83,18 @@ cj(function($) {
   else {
     // Remove the "submit once" handler, otherwise jquery-validate will not run.
     $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
+
+/* buggy?
+    params.submitHandler = function(form) {
+      // submitOnce(document.getElementById('_qf_Main_upload-bottom'), 'Main');
+      var label = $('input#_qf_Main_upload-bottom').val();
+      $('input#_qf_Main_upload-bottom').val(label + ' ...');
+
+      $('input#_qf_Main_upload-bottom').prop('disabled', true);
+      $('input#_qf_Main_upload-bottom').parent().append('<i class="fa fa-gear fa-spin"></i>');
+      form.submit();
+    }
+*/
   }
 
   CRM.validate.params = CRM.validate.params || {};
