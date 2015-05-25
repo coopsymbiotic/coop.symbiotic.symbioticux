@@ -10,11 +10,6 @@
   display: none;
 }
 
-/* hide 'other amount' option */
-.crm-contribution-main-form-block .contribution_amount-content .price-set-row:last-child {
-  display: none;
-}
-
 .crm-contribution-main-form-block .contribution_amount-content .price-set-row .price-set-option-content {
   /* copied from bootstrap */
   display: inline-block;
