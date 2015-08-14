@@ -25,14 +25,15 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
       }
     }
 
+    CRM_Core_Region::instance('page-body')->add(array(
+      'template' => 'CRM/Symbioticux/Contribute/Form/Contribution/Main.validate.tpl',
+    ));
+
     // Preview & demo sites should encourage to use a test CC number
     // otherwise users do not know what CC to use, and sometimes use their own.
     if (CRM_Utils_Array::value('action', $_REQUEST) == 'preview' || ! empty($GLOBALS['symbioticux_demo']) || CRM_Utils_Array::value('name', $form->_paymentProcessors[1]) == 'Dummy') {
       CRM_Core_Region::instance('page-body')->add(array(
         'template' => 'CRM/Symbioticux/Contribute/Form/Contribution/Main.billing-explain.tpl',
-      ));
-      CRM_Core_Region::instance('page-body')->add(array(
-        'template' => 'CRM/Symbioticux/Contribute/Form/Contribution/Main.validate.tpl',
       ));
 
       $js = "cj('#credit_card_number').click(function(event) {
