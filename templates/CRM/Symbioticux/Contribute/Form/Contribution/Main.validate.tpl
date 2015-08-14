@@ -77,12 +77,8 @@ cj(function($) {
     {/if}{literal}
   };
 
-  if (typeof paymentconfirmpopup_show_popup !== 'undefined') {
-    params.submitHandler = paymentconfirmpopup_show_popup;
-  }
-  else {
-    // Remove the "submit once" handler, otherwise jquery-validate will not run.
-    $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
+  // Remove the "submit once" handler, otherwise jquery-validate will not run.
+  $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
 
 /* buggy?
     params.submitHandler = function(form) {
@@ -95,7 +91,6 @@ cj(function($) {
       form.submit();
     }
 */
-  }
 
   CRM.validate.params = CRM.validate.params || {};
   $.extend(CRM.validate.params, params);
