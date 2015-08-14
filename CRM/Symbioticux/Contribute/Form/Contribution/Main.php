@@ -54,7 +54,7 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
     ));
 
     // Remove some CSS classes on the 'submit' button.
-    $js = "cj('.crm-submit-buttons .crm-form-submit').removeClass('crm-form-submit').parent().removeClass('crm-button');";
+    $js = "cj('.crm-submit-buttons .crm-form-submit').addClass('btn btn-primary').removeClass('crm-form-submit').parent().removeClass('crm-button');";
     CRM_Core_Resources::singleton()->addScript($js);
   }
 }
