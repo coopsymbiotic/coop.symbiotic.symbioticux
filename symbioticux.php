@@ -161,7 +161,7 @@ function symbioticux_civicrm_pageRun(&$page) {
     $foo = new $pageName;
 
     if (method_exists($foo, 'pageRun')) {
-      $foo->pageRun($form);
+      $foo->pageRun($page);
     }
   }
 }

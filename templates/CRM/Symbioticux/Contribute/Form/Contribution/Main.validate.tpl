@@ -82,7 +82,7 @@ cj(function($) {
   }
   else {
     // Remove the "submit once" handler, otherwise jquery-validate will not run.
-    $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
+    // $('#crm-container .crm-contribution-main-form-block #crm-submit-buttons input').attr('onclick', '').unbind('click');
 
 /* buggy?
     params.submitHandler = function(form) {

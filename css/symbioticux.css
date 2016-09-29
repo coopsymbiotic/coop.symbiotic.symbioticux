@@ -52,6 +52,14 @@ label.crm-inline-error.alert-danger {
   padding: 10px;
 }
 
+/* CiviCRM main dashboard */
+body.page-civicrm #crm-container #civicrm-dashboard > ul#column-0,
+body.page-civicrm #crm-container #civicrm-dashboard > ul#column-1 {
+  width: 50%;
+  min-height: auto;
+  padding: 0;
+}
+
 /* popup confirmation extension */
 #crm-paymentconfirmpopup .label {
   float: none;
