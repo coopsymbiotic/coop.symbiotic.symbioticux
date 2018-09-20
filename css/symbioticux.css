@@ -6,7 +6,9 @@
 .crm-contribution-main-form-block .contribution_amount-content .price-set-row {
   display: inline-block;
 }
-.crm-contribution-main-form-block .contribution_amount-content .price-set-row .crm-price-amount-amount {
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row .crm-price-amount-amount,
+.crm-contribution-confirm-form-block .amount_display-group .crm-price-amount-label,
+.crm-contribution-thankyou-form-block .amount_display-group .crm-price-amount-label {
   display: none;
 }
 
