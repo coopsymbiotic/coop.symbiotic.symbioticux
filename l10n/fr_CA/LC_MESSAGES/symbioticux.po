@@ -13,3 +13,6 @@ msgstr ""
 
 msgid "Since this is a demo contribution page, we have pre-filled the credit card details with test data."
 msgstr "Puisque ceci n'est qu'un exemple de page de contribution, nous avons pré-remplis les informations de carte de crédit avec des données test."
+
+msgid "Hosted by Coop SymbioTIC"
+msgstr "Hébergé par Coop SymbioTIC"
