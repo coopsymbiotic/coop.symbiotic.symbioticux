@@ -1,0 +1,25 @@
+/**
+ * Dashlet datatables pagination numbers.
+ */
+#crm-container #civicrm-dashboard .widget .paging_full_numbers {
+  font-size: 12px; /* reduce size to be all on one row */
+}
+
+#crm-container #civicrm-dashboard .widget .crm-datatable-pager-top .paging_full_numbers {
+  display: none; /* show only the bottom pagination */
+}
+
+/**
+ * Activity Dashlet is often used, and looks overwhelming.
+ * - hide the accordeon around the filters
+ */
+#crm-container #civicrm-dashboard .widget-activity .crm-accordion-header {
+  display: none;
+}
+#crm-container #civicrm-dashboard .widget-activity .crm-accordion-body {
+  border: none;
+  padding-left: 0;
+}
+#crm-container #civicrm-dashboard .widget-activity .crm-accordion-body table.activity-search-options tr {
+  border: none !important;
+}

@@ -165,3 +165,12 @@ function symbioticux_civicrm_pageRun(&$page) {
     }
   }
 }
+
+/**
+ * Implements hook_civicrm_dashboard().
+ */
+function symbioticux_civicrm_dashboard($contactID, &$contentPlacement) {
+  Civi::resources()
+    ->addStyleFile('coop.symbiotic.symbioticux', 'css/dashboard.css')
+    ->addScriptFile('coop.symbiotic.symbioticux', 'js/dashboard.js');
+}
