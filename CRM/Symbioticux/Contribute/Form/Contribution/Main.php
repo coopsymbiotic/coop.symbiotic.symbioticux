@@ -57,5 +57,10 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
     // Remove some CSS classes on the 'submit' button.
     $js = "cj('.crm-submit-buttons .crm-form-submit').addClass('btn btn-primary').removeClass('crm-form-submit').parent().removeClass('crm-button');";
     CRM_Core_Resources::singleton()->addScript($js);
+
+    // Fix the translation of the "Credit Card Information" block
+    // c.f. templates/CRM/Core/BillingBlock.tpl
+    $smarty = CRM_Core_Smarty::singleton();
+    $smarty->assign('paymentTypeLabel', ts('Credit Card Information'));
   }
 }
