@@ -85,3 +85,61 @@ body.page-civicrm-contribute-transact .ui-widget-content {
 body.page-civicrm-contribute-transact .ui-dialog-buttonpane {
   background: none;
 }
+
+/**
+ * CSS for fancier radio buttons.
+ * c.f. CRM.symbioticuxFormRadiosAsButtons()
+ * A lot of '!important' statements because of shoreditch.
+ */
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper {
+  display: inline-block;
+  height: auto !important;
+  line-height: 1em !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  margin-right: 10px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper-100px {
+  width: 100px !important;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper-200px {
+  width: 200px !important;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper label {
+  display: block;
+  padding: 10px 10px !important;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper label {
+  padding: 20px 20px !important;
+  white-space: nowrap;
+  margin: 0 !important;
+}
+.symbiocrm-form-radios-as-buttons .value {
+  font-size: 0; /* whitespace cringe when display:inline-block */
+}
+.symbiocrm-form-radios-as-buttons .crm-clear-link {
+  display: none !important; /* no need for clear-link if we can unselect buttons */
+}
+.case-tab-activities .symbiocrm-form-radios-as-buttons .crm-radio-wrapper {
+  padding-bottom: 30px !important; /* no idea why, on case-activity, needs more padding */
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper:hover {
+  background: #eee;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper.selected {
+  background: #056186;
+}
+.symbiocrm-form-radios-as-buttons .crm-radio-wrapper.selected > label {
+  color: #fff !important;
+}
+.symbiocrm-form-radios-as-buttons input.crm-form-radio {
+  display: none;
+}
+.crm-container .symbiocrm-form-radios-as-buttons input[type="radio"]:not(.old-radiocheckbox-style) + label[for]::before,
+.crm-container .symbiocrm-form-radios-as-buttons input[type="radio"]:not(.old-radiocheckbox-style):checked + label[for]::after {
+  content: '' !important; /* remove fake radio button */
+  display: none;
+  background: inherit !important;
+}
