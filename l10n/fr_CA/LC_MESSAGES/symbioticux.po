@@ -16,3 +16,6 @@ msgstr "Puisque ceci n'est qu'un exemple de page de contribution, nous avons pr�
 
 msgid "Hosted by Coop SymbioTIC"
 msgstr "Hébergé par Coop SymbioTIC"
+
+msgid "Please enter a value greater than or equal to {0}."
+msgstr "Veuillez entrer un montant plus grand ou égal à {0}."
