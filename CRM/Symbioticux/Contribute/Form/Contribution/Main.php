@@ -15,7 +15,20 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
       }
     }
 
-    $fields = array('billing_street_address-5', 'billing_city-5', 'billing_country_id-5', 'billing_state_province_id-5', 'billing_postal_code-5');
+    // Make billing fields mandatory, except the postcode if Stripe is enabled
+    // (in some countries, the postcode will not be required by Stripe).
+    $is_stripe = false;
+    $fields = ['billing_street_address-5', 'billing_city-5', 'billing_country_id-5', 'billing_state_province_id-5'];
+
+    foreach ($form->_paymentProcessors as $pp) {
+      if ($pp['class_name'] == 'Payment_Stripe') {
+        $is_stripe = true;
+      }
+    }
+
+    if (!$is_stripe) {
+      $fields[] = 'billing_postal_code-5';
+    }
 
     foreach ($fields as $field) {
       if ($form->elementExists($field)) {
