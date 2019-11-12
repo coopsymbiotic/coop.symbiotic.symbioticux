@@ -32,6 +32,9 @@
         }
       });
 
+      // Remove any leftover whitespaces
+      $(selector).html($(selector).html().replace(/&nbsp;/gi,''));
+
       // Add a 'selected' class on clicked labels
       $('.crm-radio-wrapper > label', selector).on('click', function(e) {
         $this = $(this);
