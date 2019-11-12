@@ -9,31 +9,35 @@
     var button_width = options.button_width || '';
     var button_width_class = (button_width ? 'crm-radio-wrapper-' + button_width + 'px' : '');
     var hide_zero_value = options.hide_zero_value || false;
+    var mandatory_field = options.mandatory_field || false;
 
     $(document).on('crmLoad', function(e) {
-      $('.crm-form-radio:not(.symbiocrm-radioasbuttons-processed)', selector).each(function() {
-        var $this = $(this);
-        var $parent = $this.parent();
-        var $label = $('label[for=' + $(this).attr('id') + ']');
-        var id = 'crm-radio-' + $this.attr('name') + '-wrapper';
-        var $div = $('<div>', {id: id, 'class': 'crm-radio-wrapper ' + button_width_class});
+      if ($('.crm-form-radio', selector).size()) {
+        var $new = $('<div>', {'class': 'content symbiocrm-form-radios-as-buttons'});
 
-        if ($this.prop('checked')) {
-          $div.addClass('selected');
-        }
+        $('.crm-form-radio', selector).each(function() {
+          var $this = $(this);
+          var $label = $('label[for=' + $(this).attr('id') + ']');
+          var id = 'crm-radio-' + $this.attr('name') + '-wrapper';
+          var $div = $('<div>', {id: id, 'class': 'crm-radio-wrapper ' + button_width_class});
 
-        $this.addClass('symbiocrm-radioasbuttons-processed');
-        $div.append($this);
-        $div.append($label);
-        $parent.append($div);
+          if ($this.prop('checked')) {
+            $div.addClass('selected');
+          }
 
-        if (hide_zero_value && $(this).val() == 0) {
-          $div.hide();
-        }
-      });
+          $this.removeClass('crm-form-radio');
+          $div.append($this);
+          $div.append($label);
+          $new.append($div);
 
-      // Remove any leftover whitespaces
-      $(selector).html($(selector).html().replace(/&nbsp;/gi,''));
+          if (hide_zero_value && $(this).val() == 0) {
+            $div.hide();
+          }
+        });
+
+        // This is to make sure we do not have stray nbsps.
+        $(selector).replaceWith($new);
+      }
 
       // Add a 'selected' class on clicked labels
       $('.crm-radio-wrapper > label', selector).on('click', function(e) {
@@ -44,7 +48,7 @@
         $('.crm-radio-wrapper', $tbody).removeClass('selected');
 
         // Allow deselecting
-        if (already_selected) {
+        if (already_selected && !mandatory_field) {
           $this.parent().find('input.crm-form-radio').prop('checked', false);
           e.preventDefault();
         }

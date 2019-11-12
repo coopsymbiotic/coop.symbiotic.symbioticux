@@ -134,7 +134,7 @@ body.page-civicrm-contribute-transact .ui-dialog-buttonpane {
 .symbiocrm-form-radios-as-buttons .crm-radio-wrapper.selected > label {
   color: #fff !important;
 }
-.symbiocrm-form-radios-as-buttons input.crm-form-radio {
+.symbiocrm-form-radios-as-buttons input[type=radio] {
   display: none;
 }
 .crm-container .symbiocrm-form-radios-as-buttons input[type="radio"]:not(.old-radiocheckbox-style) + label[for]::before,
