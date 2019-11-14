@@ -21,7 +21,8 @@
           var id = 'crm-radio-' + $this.attr('name') + '-wrapper';
           var $div = $('<div>', {id: id, 'class': 'crm-radio-wrapper ' + button_width_class});
 
-          if ($this.prop('checked')) {
+          // On the Payment Type field, oddly, only the latter works.
+          if ($this.prop('checked') || $this.attr('checked')) {
             $div.addClass('selected');
           }
 
