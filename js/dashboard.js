@@ -4,22 +4,20 @@
    * If there is only one dashlet on the dashboard, use 100% of the width.
    */
   $(document).on('crmLoad', function(event) {
-    if ($('#civicrm-dashboard > #column-1 > li.widget').size() == 0) {
-      $('#civicrm-dashboard > #column-1').hide();
-      $('#civicrm-dashboard > #column-0').css('width', '100%');
+    if ($('#civicrm-dashboard > .crm-flex-box > div:last-child > div').size() == 0) {
+      $('#civicrm-dashboard > .crm-flex-box > div:first-child').css('min-width', '1200px');
+      $('#civicrm-dashboard > .crm-flex-box > div:last-child').css('min-width', '80px');
     }
-    else if ($('#civicrm-dashboard > #column-0 > li.widget').size() == 0) {
-      $('#civicrm-dashboard > #column-0').hide();
-      $('#civicrm-dashboard > #column-1').css('width', '100%');
+    else if ($('#civicrm-dashboard > .crm-flex-box > div:first-child > div').size() == 0) {
+      $('#civicrm-dashboard > .crm-flex-box > div:first-child').css('min-width', '80px');
+      $('#civicrm-dashboard > .crm-flex-box > div:last-child').css('min-width', '1200px');
     }
     else {
       // Reset to what CiviCRM normally does.
       // Because of 'load' events, the dashboard might think it's empty during loading.
       // (or maybe we are just not listening for the right event?)
-      $('#civicrm-dashboard > #column-0').show();
-      $('#civicrm-dashboard > #column-0').css('width', '40%');
-      $('#civicrm-dashboard > #column-1').show();
-      $('#civicrm-dashboard > #column-1').css('width', '60%');
+      $('#civicrm-dashboard > .crm-flex-box > div:first-child').css('min-width', '300px');
+      $('#civicrm-dashboard > .crm-flex-box > div:last-child').css('min-width', '450px');
     }
   });
 
