@@ -54,7 +54,7 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
                  cj(this).val('4111111111111111').trigger('change');
                  cj('#cvv2').val('123').trigger('change');
                  cj('#credit_card_exp_date_m').val('5').trigger('change');
-                 cj('#credit_card_exp_date_Y').val('2021').trigger('change');
+                 cj('#credit_card_exp_date_Y').val('2025').trigger('change');
 
                  cj('.symbioticux-billing-explain-cc').prependTo('.credit_card_info-section').slideDown();
                }
