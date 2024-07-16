@@ -24,7 +24,7 @@ class CRM_Symbioticux_Contribute_Form_Contribution_Main {
 
       $js = "cj('#credit_card_number').click(function(event) {
                if (! cj(this).val()) {
-                 cj(this).val('4111111111111111').trigger('change');
+                 cj(this).val('4222222222222220').trigger('change');
                  cj('#cvv2').val('123').trigger('change');
                  cj('#credit_card_exp_date_m').val('5').trigger('change');
                  cj('#credit_card_exp_date_Y').val('2027').trigger('change');
