@@ -7,6 +7,7 @@
   display: inline-block;
 }
 .crm-contribution-main-form-block .contribution_amount-content .price-set-row .crm-price-amount-amount,
+.crm-contribution-main-form-block .contribution_amount-content .price-set-row .crm-price-amount-label-separator,
 .crm-contribution-confirm-form-block .amount_display-group .crm-price-amount-label,
 .crm-contribution-thankyou-form-block .amount_display-group .crm-price-amount-label {
   display: none;
@@ -60,30 +61,6 @@ body.page-civicrm #crm-container #civicrm-dashboard > ul#column-1 {
   width: 50%;
   min-height: auto;
   padding: 0;
-}
-
-/* popup confirmation extension */
-#crm-paymentconfirmpopup .label {
-  float: none;
-  width: auto;
-  text-align: left;
-}
-
-/* show only the amount label */
-#crm-paymentconfirmpopup .crm-price-amount-amount {
-  display: none;
-}
-
-body.page-civicrm-contribute-transact .ui-dialog-titlebar {
-  display: none;
-}
-
-body.page-civicrm-contribute-transact .ui-widget-content {
-  border: 0;
-}
-
-body.page-civicrm-contribute-transact .ui-dialog-buttonpane {
-  background: none;
 }
 
 /**
